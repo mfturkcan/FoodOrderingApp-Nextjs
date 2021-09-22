@@ -3,7 +3,13 @@ import mongoose from 'mongoose';
     Connect
     It will connect to the mongodb db if not exist will create it.
 */
-mongoose.connect("mongodb://localhost:27017/restaurantsDB", { useNewUrlParser: true, useUnifiedTopology: true });
+
+const env = process.env.NODE_ENV;
+let db_string = "http://localhost:27017/restaurantsDB";
+if (env === "development") {
+    db_string = process.env.DB_STRING;
+}
+mongoose.connect(db_string, { useNewUrlParser: true, useUnifiedTopology: true });
 
 // Specify the schema for restaurants
 
@@ -27,4 +33,4 @@ const restaurantSchema = mongoose.Schema({
 });
 
 
-export default  mongoose.models["Restaurant"] || mongoose.model("Restaurant", restaurantSchema);
+export default mongoose.models["Restaurant"] || mongoose.model("Restaurant", restaurantSchema);
