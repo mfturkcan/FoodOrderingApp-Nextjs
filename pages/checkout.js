@@ -43,7 +43,7 @@ const MyCheckoutForm = props => {
         });
 
         console.log(orderData);
-        let { data } = await axios.post("http://localhost:3000/api/checkout_sessions", {
+        let { data } = await axios.post(process.env.URL + "/api/checkout_sessions", {
             orderList: orderData,
         });
         console.log(data);
