@@ -11,18 +11,18 @@ yarn dev
 ```
 ## Installiation
 
-1.Clone the repo
+1. Clone the repo
 ```bash
   git clone https://github.com/mfturkcan/Food-Ordering-App---Nextjs.git
 ```
 
-2.Install npm packages
+2. Install npm packages
 
 ```bash
   npm install
 ```
 
-3.Create your .env file on the root folder. Put your environmental keys.
+3. Create your .env file on the root folder. Put your environmental keys.
 
 ```bash
   STRIPE_SECRET_KEY= your_secret_key
@@ -30,7 +30,7 @@ yarn dev
   URL= http://localhost:3000 
   DB_STRING= connection_string_mongodb
 ```
-4.Run in development mode.
+4. Run in development mode.
 ```bash
   npm run dev
 ```
