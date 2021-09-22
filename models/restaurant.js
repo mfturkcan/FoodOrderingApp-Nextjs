@@ -6,7 +6,7 @@ import mongoose from 'mongoose';
 
 const env = process.env.NODE_ENV;
 let db_string = "http://localhost:27017/restaurantsDB";
-if (env === "development") {
+if (env === "production") {
     db_string = process.env.DB_STRING;
 }
 mongoose.connect(db_string, { useNewUrlParser: true, useUnifiedTopology: true });
