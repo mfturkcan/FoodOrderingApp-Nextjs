@@ -11,8 +11,8 @@ export default function Restaurants(props) {
     );
 }
 
-export async function getServerSideProps() {
-    const { data } = await axios.get("http://localhost:3000/api/restaurants/get_restaurants");
+export async function getServerSideProps(context) {
+    const { data } = await axios.get(process.env.URL + "/api/restaurants/get_restaurants");
 
     return {
         props: {

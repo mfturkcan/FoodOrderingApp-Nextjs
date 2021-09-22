@@ -22,7 +22,7 @@ export async function getServerSideProps(context) {
 
     //console.log(params);
 
-    const { data } = await axios.get("http://localhost:3000/api/restaurants/" + context.query.resId);
+    const { data } = await axios.get(process.env.URL + "/api/restaurants/" + context.query.resId);
 
     const foods = data.foods;
     return {
